@@ -1,0 +1,44 @@
+/* Adicione este CSS em um arquivo .css ou dentro de um componente Styled-Component */
+.sidemenu {
+    background: #100f1a;
+    color: #ffffff; /* Cor do texto do menu */
+    width: 250px; /* Largura do menu */
+    height: 100%; /* Altura do menu (100% da altura do pai) */
+    position: fixed; /* Fixa o menu na lateral da tela */
+    padding: 20px; /* Espaçamento interno do menu */
+  
+    /* Adicione sombras para dar profundidade */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .sidemenu h1 {
+    font-size: 24px; /* Tamanho da fonte do título do menu */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+  }
+  
+  .sidemenu ul {
+    list-style: none; /* Remove marcadores de lista */
+    
+    padding: 0; /* Remove o espaçamento interno da lista */
+  }
+  
+  .sidemenu li {
+    background-color: #1d1d2e;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 10px; /* Espaçamento entre os itens do menu */
+  }
+  
+  .sidemenu a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: #ffffff; /* Cor do texto dos links */
+    font-size: 12px; /* Tamanho da fonte dos links */
+  
+    /* Adicione efeitos de hover nos links */
+    transition: color 0.2s;
+  }
+  
+  .sidemenu a:hover {
+    color: #98a4cc; /* Cor do texto dos links ao passar o mouse */
+  }
+  

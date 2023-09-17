@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+  display: flex;
+  background: #100f1a;
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.sidemenu {
+  width: 240px;
+  background: #1e1c2e;
+}
+
+.align-content{
+  position: fixed;
+  left: 250px;
+}
+
+.content {
+  flex: 1;
+  
+  background-color: #22203b;
+}
+
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #3b3857 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: inherit;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #3b3857;
+    border-radius: 3px;
+    border: 2px solid inherit;
+  }

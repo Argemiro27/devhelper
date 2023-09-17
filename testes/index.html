@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Aprendendo com o Usuário</title>
+    <style>
+        /* Adicione algum estilo CSS aqui, conforme necessário. */
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box">
+            <div id="chat-log"></div>
+            <input type="text" id="user-input" placeholder="Digite uma pergunta">
+            <button onclick="askQuestion()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        function askQuestion() {
+            const userInput = document.getElementById('user-input').value;
+            const chatLog = document.getElementById('chat-log');
+
+            // Recupera o histórico de conversas do localStorage
+            const conversationHistory = JSON.parse(localStorage.getItem('conversationHistory')) || [];
+
+            // Procura se a pergunta já foi respondida antes
+            let found = false;
+            for (const entry of conversationHistory) {
+                if (entry.question === userInput) {
+                    chatLog.innerHTML += `<p><strong>Você:</strong> ${userInput}</p>`;
+                    chatLog.innerHTML += `<p><strong>IA:</strong> ${entry.answer}</p>`;
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                // Se a pergunta não foi respondida antes, pergunte ao usuário e armazene a resposta no localStorage.
+                const newAnswer = prompt("Não sei a resposta. Por favor, explique:");
+                chatLog.innerHTML += `<p><strong>Você:</strong> ${userInput}</p>`;
+                chatLog.innerHTML += `<p><strong>IA:</strong> Não sei o que é. O que é ${userInput}?</p>`;
+
+                conversationHistory.push({
+                    question: userInput,
+                    answer: newAnswer,
+                });
+
+                // Armazena o histórico atualizado no localStorage
+                localStorage.setItem('conversationHistory', JSON.stringify(conversationHistory));
+            }
+
+            // Limpa a entrada do usuário
+            document.getElementById('user-input').value = '';
+        }
+    </script>
+</body>
+</html>
